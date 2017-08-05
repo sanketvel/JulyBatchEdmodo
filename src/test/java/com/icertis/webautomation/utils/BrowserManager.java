@@ -32,7 +32,7 @@ public class BrowserManager
 	private static void settings() {
 		if(browser != null)
 		{
-			browser.manage().timeouts().implicitlyWait(2, TimeUnit.SECONDS);
+			browser.manage().timeouts().implicitlyWait(20, TimeUnit.SECONDS);
 			browser.manage().window().maximize();
 			
 			// delete cookies
