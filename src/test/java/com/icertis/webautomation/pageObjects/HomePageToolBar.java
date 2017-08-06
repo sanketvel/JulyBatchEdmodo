@@ -16,6 +16,7 @@ public class HomePageToolBar {
 	By group_suggestion_tb = By.id("s2id_autogen2");
 	By group_sg = By.xpath(".//ul[@class='select2-results']/li");
 	By note_post = By.xpath(".//*[@id='postbox-note-content']/div/section/section/div[2]/div[2]/button");
+	By stream_list = By.className("stream-item");
 	
 	
 	public boolean verify_login_successfull()
@@ -23,7 +24,7 @@ public class HomePageToolBar {
 		return BrowserManager.getDriver().findElement(By.linkText("Home")).isDisplayed();
 	}
 
-	public void post_note(String my_note) {
+	public void post_note(String my_note) throws Exception {
 		
 		BrowserManager.getDriver().findElement(note_tab_link).click();
 		List<WebElement> tb_list =   BrowserManager.getDriver().findElements(note_tb);
@@ -31,15 +32,8 @@ public class HomePageToolBar {
 		
 		//SELECT TARGET GROUP
 		BrowserManager.getDriver().findElements(group_suggestion_tb).get(0).sendKeys("Sam ");
-		
 
-		
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+		Thread.sleep(5000);
 		
 		List<WebElement> groups_suggestion  = BrowserManager.getDriver().findElements(group_sg);
 		
@@ -57,24 +51,38 @@ public class HomePageToolBar {
 			}
 		}
 		
-
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e1) {
-			// TODO Auto-generated catch block
-			e1.printStackTrace();
-		}
+        //sleep
 
 		BrowserManager.getDriver().findElement(note_post).click();
-		try {
-			Thread.sleep(5000);
-		} catch (InterruptedException e2) {
-			// TODO Auto-generated catch block
-			e2.printStackTrace();
-		}
-	
+        Thread.sleep(5000);
 		
 	}
+	
+	
+	public boolean verify_if_note_posted(String my_note)
+	{
+		
+		List<WebElement> Post_List  = BrowserManager.getDriver().findElements(stream_list);
+		
+		System.out.println(BrowserManager.getDriver().findElements(By.className("stream-container")).size());
+		
+//		for (WebElement e : Post_List )
+//		{
+//			if(e.getText().contains(my_note))
+//			{
+//				return true;
+//			}
+//		}
+		
+		if(BrowserManager.getDriver().findElement(By.className("stream-container")).getText().contains(my_note) )
+		{
+			return true;
+		}
+		
+		return false;
+		
+	}
+	
 	
 	
 

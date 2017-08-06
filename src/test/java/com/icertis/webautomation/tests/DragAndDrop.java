@@ -9,7 +9,7 @@ import com.icertis.webautomation.utils.BrowserManager;
 
 public class DragAndDrop {
 	
-	//http://demoqa.com/droppable/
+		
 	
 	@Test
 	public void drag_and_drop()
