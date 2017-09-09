@@ -1,0 +1,104 @@
+[
+  {
+    "line": 2,
+    "elements": [
+      {
+        "before": [
+          {
+            "result": {
+              "duration": 245805,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.setup()"
+            }
+          }
+        ],
+        "line": 5,
+        "name": "Verify if user can login using username and password",
+        "description": "",
+        "id": "test-login;verify-if-user-can-login-using-username-and-password",
+        "after": [
+          {
+            "result": {
+              "duration": 932676972,
+              "status": "passed"
+            },
+            "match": {
+              "location": "Hooks.teardown()"
+            }
+          }
+        ],
+        "type": "scenario",
+        "keyword": "Scenario",
+        "steps": [
+          {
+            "result": {
+              "duration": 28273550468,
+              "status": "passed"
+            },
+            "line": 6,
+            "name": "user is on login page",
+            "match": {
+              "location": "LoginStep.user_is_on_login_page()"
+            },
+            "keyword": "* "
+          },
+          {
+            "result": {
+              "duration": 830933304,
+              "status": "passed"
+            },
+            "line": 7,
+            "name": "user logins using username \"teachery1@gmail.com\" and password \"123456\"",
+            "match": {
+              "arguments": [
+                {
+                  "val": "teachery1@gmail.com",
+                  "offset": 28
+                },
+                {
+                  "val": "123456",
+                  "offset": 63
+                }
+              ],
+              "location": "LoginStep.user_logins_using_username_and_password(String,String)"
+            },
+            "keyword": "* "
+          },
+          {
+            "result": {
+              "duration": 12196333690,
+              "status": "passed"
+            },
+            "line": 8,
+            "name": "verify if user successfully loged-in",
+            "match": {
+              "location": "LoginStep.verify_if_user_successfully_loged_in()"
+            },
+            "keyword": "* "
+          }
+        ],
+        "tags": [
+          {
+            "line": 4,
+            "name": "@test_01"
+          },
+          {
+            "line": 4,
+            "name": "@login"
+          },
+          {
+            "line": 4,
+            "name": "@wip"
+          }
+        ]
+      }
+    ],
+    "name": "Test login",
+    "description": "",
+    "id": "test-login",
+    "keyword": "Feature",
+    "uri": "Login.feature"
+  }
+]

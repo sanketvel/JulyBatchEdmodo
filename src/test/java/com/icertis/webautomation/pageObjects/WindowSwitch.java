@@ -1,5 +1,6 @@
 package com.icertis.webautomation.pageObjects;
 
+import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
@@ -26,13 +27,14 @@ public class WindowSwitch {
 		
 		
 		//list all the open windows
-        Set<String> wins =  BrowserManager.getDriver().getWindowHandles();
+        HashSet<String> wins =  (HashSet<String>) BrowserManager.getDriver().getWindowHandles();
 		String s = "";
 		for(String h : wins)
 		{
 			s = h;
 		}
-		BrowserManager.getDriver().switchTo().window(s);
+		String sec ;
+				BrowserManager.getDriver().switchTo().window(s);
 		System.out.println("-------------------");
 		System.out.println(BrowserManager.getDriver().getWindowHandle());
 		

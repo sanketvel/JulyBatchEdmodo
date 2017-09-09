@@ -32,5 +32,13 @@
 </dependency>
     
     
+    <!-- https://mvnrepository.com/artifact/info.cukes/cucumber-html -->
+    <dependency>
+	<groupId>org.apache.poi</groupId>
+	<artifactId>poi</artifactId>
+	<version>3.8</version>
+</dependency>
+    
+    
   </dependencies>
 </project>

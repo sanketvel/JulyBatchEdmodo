@@ -13,14 +13,23 @@ public class LoginPage
       {
     	  BrowserManager.getDriver().get(page_url);
       }
-
-	  
+      
       public void login()
       {
     	  // click on the login button
     	  BrowserManager.getDriver().findElement(Repo_Login.login_button).click();
-    	  BrowserManager.getDriver().findElement(Repo_Login.unmame_tb).sendKeys("teachery1@gmail.com");
+    	  BrowserManager.getDriver().findElement(Repo_Login.unmame_tb).sendKeys("teacher1@gmail.com");
     	  BrowserManager.getDriver().findElement(Repo_Login.pwd_tb).sendKeys("123456");
+    	  //login submit
+    	  BrowserManager.getDriver().findElement(Repo_Login.login_submit).click();
+      }
+	  
+      public void login(String username,String pwd)
+      {
+    	  // click on the login button
+    	  BrowserManager.getDriver().findElement(Repo_Login.login_button).click();
+    	  BrowserManager.getDriver().findElement(Repo_Login.unmame_tb).sendKeys(username);
+    	  BrowserManager.getDriver().findElement(Repo_Login.pwd_tb).sendKeys(pwd);
     	  //login submit
     	  BrowserManager.getDriver().findElement(Repo_Login.login_submit).click();
       }
